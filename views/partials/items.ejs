@@ -1,0 +1,21 @@
+<div class="center padtop storediv">
+    <% items.forEach(x => { %>
+      <figure class="figure item">
+        <img src="<%- x.image %>" class="figure-img img-fluid rounded" alt="<%- x.name %>">
+        <figcaption class="figure-caption">
+          <h5 class="center"><%- x.name %></h5>
+          <button class="snipcart-add-item btn btn-success"
+data-item-id="<%- x.id %>"
+data-item-price="<%- x.price %>"
+data-item-url="<%- x.url %>"
+data-item-description="<%- x.description || "" %>"
+data-item-image="<%- x.image %>"
+data-item-name="<%- x.name %>"
+data-item-custom1-name="Size"
+data-item-custom1-options="<%- x.sizefield %>">
+Add to cart
+</button>
+        </figcaption>
+      </figure>
+    <% }) %>
+  </div>

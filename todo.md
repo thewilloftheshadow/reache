@@ -1,0 +1,6 @@
+- [ ] prices  
+- [ ] home page  
+- [ ] youth vs adult image  
+- [ ] xl price increase  
+- [ ] filter?  
+- [x] snipcart setup  

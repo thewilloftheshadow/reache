@@ -1,3 +1,3 @@
 module.exports = {
-    root: "https://reache.theshadow.xyz"
+    root: "https://reache.willshadow.com"
 }

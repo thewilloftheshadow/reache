@@ -83,17 +83,20 @@ let generate = async function () {
       pushitem.name += itemsrc.sizes.youth ? ` - Adult` : ""
       pushitem.id = `${x}-adult`
       pushitem.sizefield = sizelist(itemsrc.sizes.adult)
+      module.exports.push(itemsrc)
     }
     if (itemsrc.sizes?.other) {
       let pushitem = { ...item }
       pushitem.id = `${x}`
       pushitem.sizefield = sizelist(itemsrc.sizes.other)
+      module.exports.push(itemsrc)
     }
     if (itemsrc.sizes?.youth) {
       let pushitem = { ...item }
       pushitem.name += itemsrc.sizes.adult ? ` - Youth` : ""
       pushitem.id = `${x}-youth`
       pushitem.sizefield = sizelist(itemsrc.sizes.youth)
+      module.exports.push(itemsrc)
     }
     if (!itemsrc.sizes) {
       let pushitem = {...item}

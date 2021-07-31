@@ -3,6 +3,7 @@ const config = require("./config.js")
 const { customAlphabet } = require("nanoid")
 const nanoid = customAlphabet("1234567890abcdefghijklmnopqrstuvwxyz", 4)
 const url = `${config.root}/api/items`
+const Price = require("format-price")
 
 const master = {
   adult: ["XS", "S", "M", "L", "XL"],
@@ -12,55 +13,56 @@ const master = {
 }
 
 const allitems = {
-  crewneck: {
-    name: "Crew Neck",
+  crewadult: {
+    name: "Crew Neck - Adult",
+    price: 10.05,
+    sizes: master.adult.concat([, { size: "2XL", price: 2 }, { size: "3XL", price: 2 }, { size: "4XL", price: 2 }]),
+    extra: { name: "Warning", value: "2XL is not available for this shirt selection" },
+  },
+  crewyouth: {
+    name: "Crew Neck - Youth",
+    price: 10.2,
+    sizes: master.youth,
+  },
+  crewtoddler: {
+    name: "Crew Neck - Toddler",
     price: 8,
-    sizes: {
-      youth: master.youth,
-      adult: master.adult.concat([, { size: "2XL", price: 2.25 }, { size: "3XL", price: 2.25 }, { size: "4XL", price: 2.25 }]),
-    },
+    sizes: master.toddler,
+  },
+  crewbaby: {
+    name: "Crew Neck - Baby",
+    price: 9.1,
+    sizes: master.baby,
   },
   vneck: {
     name: "V-Neck - Adult",
-    price: 11.25,
-    sizes: {
-      adult: master.adult.concat([{ size: "3XL", price: 2.25 }]),
-    },
+    price: 10.8,
+    sizes: master.adult.concat([{ size: "3XL", price: 2.25 }]),
   },
-  toddler: {
-    name: "Crew Neck - Toddler",
-    price: 8,
-    sizes: {
-      other: master.toddler,
-    },
+  longsleeveadult: {
+    name: "Long Sleeves - Adult",
+    price: 12.25,
+    sizes: master.adult,
   },
-  babycrew: {
-    name: "Crew Neck - Baby",
-    price: 8,
-    sizes: { other: master.baby },
+  longsleeveyouth: {
+    name: "Long Sleeves - Youth",
+    price: 12.25,
+    sizes: ap(master.youth, "XL"),
   },
-  longsleeves: {
-    name: "Long Sleeves",
-    price: 11.25,
-    sizes: {
-      youth: ap(master.youth, "XL"),
-      adult: master.adult,
-    },
+  zipperedadult: {
+    name: "Zippered Jacket - Adult",
+    price: 22.75,
+    sizes: master.adult,
   },
-  zippered: {
-    name: "Zippered Hoodie",
-    price: 24.5,
-    sizes: {
-      adult: master.adult,
-      youth: ap(master.youth, "XL"),
-    },
+  zipperedyouth: {
+    name: "Zippered Jacket - Youth",
+    price: 18.75,
+    sizes: ap(master.youth, "XL"),
   },
   hoodie: {
     name: "Pullover Hoodie - Adult",
-    price: 23.5,
-    sizes: {
-      adult: master.adult,
-    },
+    price: 22.0,
+    sizes: master.adult,
   },
   hat: {
     name: "Hat",
@@ -75,34 +77,14 @@ let generate = async function () {
     let item = {
       name: itemsrc.name,
       price: itemsrc.price,
+      extra: itemsrc.extra,
+      description: Price.format("en-US", "USD", itemsrc.price),
       url,
       image: `${config.root}/images/${x}.png`,
+      id: x,
     }
-    if (itemsrc.sizes?.adult) {
-      let pushitem = { ...item }
-      pushitem.name += itemsrc.sizes.youth ? ` - Adult` : ""
-      pushitem.id = `${x}-adult`
-      pushitem.sizefield = sizelist(itemsrc.sizes.adult)
-      module.exports.push(itemsrc)
-    }
-    if (itemsrc.sizes?.other) {
-      let pushitem = { ...item }
-      pushitem.id = `${x}`
-      pushitem.sizefield = sizelist(itemsrc.sizes.other)
-      module.exports.push(itemsrc)
-    }
-    if (itemsrc.sizes?.youth) {
-      let pushitem = { ...item }
-      pushitem.name += itemsrc.sizes.adult ? ` - Youth` : ""
-      pushitem.id = `${x}-youth`
-      pushitem.sizefield = sizelist(itemsrc.sizes.youth)
-      module.exports.push(itemsrc)
-    }
-    if (!itemsrc.sizes) {
-      let pushitem = {...item}
-      pushitem.id = `${x}`
-      module.exports.push(itemsrc)
-    }
+    if (itemsrc.sizes) item.sizefield = sizelist(itemsrc.sizes)
+    module.exports.push(item)
   }
 }
 

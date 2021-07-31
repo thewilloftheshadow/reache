@@ -1,17 +1,22 @@
-
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 .padtop {
   padding-top: 50px;
 }
+.padbottom {
+  padding-top: 50px;
+}
+
+/* font-size: x-large; */
+
 .padright {
   padding-right: 20px;
 }
-.bold{
+.bold {
   font-weight: 900;
 }
-.semibold{
+.semibold {
   font-weight: 600;
 }
 .center {
@@ -20,20 +25,12 @@ body {
 .storediv {
   padding-right: 15px;
   padding-left: 15px;
-  max-width: 1300px;
+  max-width: 1750px;
   margin-right: auto;
   margin-left: auto;
 }
-figure {
-  position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  width: 300px;
-  height: 300px;
-}
-.figure-img {
-  height: 200px
+.card {
+  max-width: 300px;
 }
 .gridblock {
   display: inline-block;
@@ -45,22 +42,22 @@ figure {
   border-radius: 50%;
   object-fit: cover;
 }
-.right{
+.right {
   float: right;
 }
-.vertcenter{
+.vertcenter {
   vertical-align: middle;
 }
-.logo{
+.logo {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-.logo h1{
+.logo h1 {
   line-height: 128px;
 }
-.hidden{
+.hidden {
   display: none;
 }
-.shown{
+.shown {
   display: block;
 }

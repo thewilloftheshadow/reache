@@ -6,7 +6,7 @@ const url = `${config.root}/api/items`
 const Price = require("format-price")
 
 const master = {
-  adult: ["XS", "S", "M", "L", "XL"],
+  adult: ["XS", "S", "M", "L", "XL", { size: "2XL", price: 2 }],
   youth: ["S", "M", "L", "XL"],
   baby: ["3-6M", "6-12M", "12-18M", "18-24M"],
   toddler: ["2T", "3T", "4T", "5T"],
@@ -16,7 +16,7 @@ const allitems = {
   crewadult: {
     name: "Crew Neck - Adult",
     price: 10.05,
-    sizes: master.adult.concat([, { size: "2XL", price: 2 }, { size: "3XL", price: 2 }, { size: "4XL", price: 2 }]),
+    sizes: ["XS", "S", "M", "L", "XL"],
     extra: { name: "Warning", value: "2XL is not available for this shirt selection" },
   },
   crewyouth: {
@@ -37,7 +37,7 @@ const allitems = {
   vneck: {
     name: "V-Neck - Adult",
     price: 10.8,
-    sizes: master.adult.concat([{ size: "3XL", price: 2.25 }]),
+    sizes: master.adult,
   },
   longsleeveadult: {
     name: "Long Sleeves - Adult",
@@ -47,7 +47,7 @@ const allitems = {
   longsleeveyouth: {
     name: "Long Sleeves - Youth",
     price: 12.25,
-    sizes: ap(master.youth, "XL"),
+    sizes: master.youth,
   },
   zipperedadult: {
     name: "Zippered Jacket - Adult",
@@ -57,7 +57,7 @@ const allitems = {
   zipperedyouth: {
     name: "Zippered Jacket - Youth",
     price: 18.75,
-    sizes: ap(master.youth, "XL"),
+    sizes: master.youth,
   },
   hoodie: {
     name: "Pullover Hoodie - Adult",
@@ -66,7 +66,7 @@ const allitems = {
   },
   hat: {
     name: "Hat",
-    price: 20,
+    price: 0,
   },
 }
 

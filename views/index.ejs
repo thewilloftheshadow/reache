@@ -1,29 +1,58 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
   <head>
     <%- include("partials/header", {title: null, desc: null }) %>
   </head>
   <body>
     <%- include("partials/navbar") %>
-    
-    <div class="container center padtop">
-      <img src="/images/logo.png" alt="ReACHE Logo" height="200px" class="padtop">
-      <div class="padtop">
-        Welcome to ReACHE Webstore, your home for purchasing shirts for the 2021-2022 school year.<br><br>
-All youth size shirts will have Proverbs 22:6 on the back, all adult sizes will have Matthew 28:19 on the back.
-<br>
-Every shirt will have the ReACHE logo on the front pocket area. 
-<br><br>
-Shirts are Bella+Canvas Heathered True Royal Blue (except for baby sizes, which are heathered Colombia Blue). 
-<br><br>
-<button type="button" class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="bottom" title="Do not pass Go. Do not collect $200">Go To Store</button>
 
-<!-- T-Shirts are currently unavailable now, as the deadline has passed.
-<br><br> -->
-<!-- Select a category in the sidebar to view the shirts you can purchase, or select "All Items" to see all the items available. All images are clickable to view larger. All prices already include tax and Paypal fees. -->
+    <div class="container center padtop">
+      <img src="/images/logo.png" alt="ReACHE Logo" height="200px" class="padtop" />
+      <div class="padtop">
+        Welcome to ReACHE Webstore, your home for purchasing shirts for the 2021-2022 school year.<br /><br />
+        All youth size shirts will have Proverbs 22:6 on the back, all adult sizes will have Matthew 28:19 on the back.
+        <br />
+        Every shirt will have the ReACHE logo on the front pocket area.
+        <br /><br />
+        Shirts are Bella+Canvas Heathered True Royal Blue (except for baby sizes, which are heathered Colombia Blue).
+        <br /><br />
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="tooltip" data-placement="bottom" title="Do not pass Go. Do not collect $200">Go To Store</button>
+<br>
+<button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#shirtTrigger" style="margin-top:20px;">See shirt backs</button>
+      </div>
+      
+
+      <!-- Modal -->
+
+      <div class="modal fade" id="shirtTrigger" tabindex="-1" aria-labelledby="shirtTriggerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="shirtTriggerLabel">T-Shirt Backs</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-sm">
+                    <img src="/images/designkids.png" width="500px" height="500px" />
+                  </div>
+                  <div class="col-sm">
+                    <img src="/images/designteen.png" width="500px" height="500px" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
+
     <%- include("partials/footer") %>
   </body>
 </html>

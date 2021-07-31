@@ -2,7 +2,54 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
 
 <script async src="https://cdn.snipcart.com/themes/v3.0.30/default/snipcart.js"></script>
-<div hidden id="snipcart" data-api-key="ZWYxYThmNjAtOGYyNC00ODViLWI1MDctMmNiOTE5YjgzMjQwNjM3NDQzNTU1MTEwMDQxOTM3" data-config-add-product-behavior=""></div>
+<div hidden id="snipcart" data-api-key="ZWYxYThmNjAtOGYyNC00ODViLWI1MDctMmNiOTE5YjgzMjQwNjM3NDQzNTU1MTEwMDQxOTM3" data-config-add-product-behavior="">
+  <billing>
+    <div class="snipcart__box">
+      <div class="snipcart__box--header">
+        <div class="snipcart__box--title">
+          <div class="snipcart__box--badge snipcart__box--badge snipcart__box--badge-highlight snipcart__font--bold snipcart__font--secondary">{{ number }}</div>
+          <h1 class="snipcart__font--subtitle">
+            {{ $localize("billing.title") }}
+          </h1>
+        </div>
+      </div>
+
+      <snipcart-error-message :show-fields-errors="false"></snipcart-error-message>
+
+      <fieldset class="snipcart-form__set">
+        <div class="snipcart-form__field">
+          <snipcart-label class="snipcart__font--tiny" for="name">
+            {{ $localize("address_form.name") }}
+          </snipcart-label>
+
+          <snipcart-input name="name"></snipcart-input>
+          <snipcart-error-message name="name"></snipcart-error-message>
+        </div>
+
+        <div class="snipcart-form__field">
+          <snipcart-label class="snipcart__font--tiny" for="email">
+            {{ $localize("address_form.email") }}
+          </snipcart-label>
+
+          <snipcart-input name="email" v-if="!emailIsReadonly"></snipcart-input>
+          <span class="snipcart-input--readonly snipcart__font--secondary snipcart__font--bold" v-else>{{ customer.email }}</span>
+          <snipcart-error-message name="email"></snipcart-error-message>
+        </div>
+        <div class="snipcart-form__field">
+          <snipcart-label class="snipcart__font--tiny" for="email"> Phone Number </snipcart-label>
+
+          <snipcart-input name="phone"></snipcart-input>
+          <span class="snipcart-input--readonly snipcart__font--secondary snipcart__font--bold" v-else>{{ customer.phone }}</span>
+          <snipcart-error-message name="phone"></snipcart-error-message>
+        </div>
+      </fieldset>
+
+      <div class="snipcart-form__footer">
+        <button type="submit" class="snipcart-cart-button snipcart__font--bold snipcart__font--secondary snipcart-cart-button--highlight snipcart__font--large" data-ol-has-click-handler=""><span class="snipcart-cart-button__icon"></span> Continue <span class="snipcart-cart-button__icon"></span></button>
+      </div>
+    </div>
+  </billing>
+</div>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

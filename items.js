@@ -37,7 +37,7 @@ const allitems = {
   vneck: {
     name: "V-Neck - Adult",
     price: 10.8,
-    sizes: master.adult,
+    sizes: ["XS", "S", "M", "L", "XL", {size: "2XL", price: 2}]
   },
   longsleeveadult: {
     name: "Long Sleeves - Adult",

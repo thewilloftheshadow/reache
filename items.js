@@ -6,7 +6,7 @@ const url = `${config.root}/api/items`
 const Price = require("format-price")
 
 const master = {
-  adult: ["XS", "S", "M", "L", "XL", { size: "2XL", price: 2 }],
+  adult: ["XS", "S", "M", "L", "XL", { size: "2XL", price: 2 }, {size: "3XL", price: 2}, {size: "4XL", price: 2}],
   youth: ["S", "M", "L", "XL"],
   baby: ["3-6M", "6-12M", "12-18M", "18-24M"],
   toddler: ["2T", "3T", "4T", "5T"],

@@ -7,7 +7,7 @@
           <div class="card-body">
             <h5 class="card-title"><%- x.name %></h5>
             <p class="card-text"><%- x.description || "" %></p>
-            <button class="snipcart-add-item btn btn-success" data-item-id="<%- x.id %>" data-item-price="<%- x.price %>" data-item-url="<%- x.url %>" data-item-description="<%- x.description || "" %>"   data-item-image="<%- x.image %>" data-item-name="<%- x.name %>" data-item-custom1-name="Size" data-item-custom1-options="<%- x.sizefield %>" <% if(x.extra) { %> data-item-custom99-name="<%- x.extra.name %>" data-item-custom99-type="readonly" data-item-custom99-value="<%- x.extra.value %>" <% } %>>Add to cart</button>
+            <button class="snipcart-add-item btn btn-success" data-item-id="<%- x.id %>" data-item-price="<%- x.price %>" data-item-url="<%- x.url %>" data-item-description="<%- x.description || "" %>"   data-item-image="<%- x.image %>" data-item-name="<%- x.name %>" <% if(x.sizefield) { %> data-item-custom1-name="Size" data-item-custom1-options="<%- x.sizefield %>" <% } %> <% if(x.extra) { %> data-item-custom99-name="<%- x.extra.name %>" data-item-custom99-type="readonly" data-item-custom99-value="<%- x.extra.value %>" <% } %>>Add to cart</button>
           </div>
         </div>
       </div>

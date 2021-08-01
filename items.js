@@ -6,7 +6,7 @@ const url = `${config.root}/api/items`
 const Price = require("format-price")
 
 const master = {
-  adult: ["XS", "S", "M", "L", "XL", { size: "2XL", price: 2 }, {size: "3XL", price: 2}, {size: "4XL", price: 2}],
+  adult: ["XS", "S", "M", "L", "XL", { size: "2XL (+$2)", price: 2 }, {size: "3XL (+$2)", price: 2}, {size: "4XL (+$2)", price: 2}],
   youth: ["S", "M", "L", "XL"],
   baby: ["3-6M", "6-12M", "12-18M", "18-24M"],
   toddler: ["2T", "3T", "4T", "5T"],
@@ -16,7 +16,7 @@ const allitems = {
   crewadult: {
     name: "Crew Neck - Adult",
     price: 10.05,
-    sizes: ["XS", "S", "M", "L", "XL", {size: "3XL", price: 2}, {size: "4XL", price: 2}],
+    sizes: ["XS", "S", "M", "L", "XL", {size: "3XL (+$2)", price: 2}, {size: "4XL (+$2)", price: 2}],
     extra: { name: "           ", value: "2XL not available in Crew Neck. See V-Neck option instead" },
   },
   crewyouth: {
@@ -37,7 +37,7 @@ const allitems = {
   vneck: {
     name: "V-Neck - Adult",
     price: 10.8,
-    sizes: ["S", "M", "L", "XL", {size: "2XL", price: 2}],
+    sizes: ["S", "M", "L", "XL", {size: "2XL (+$2)", price: 2}],
     extra: { name: "           ", value: "XS, 3XL, and 4XL not available in V-Neck. See Crew Neck option instead" },
   },
   longsleeveadult: {
@@ -70,7 +70,8 @@ const allitems = {
   },
   hat: {
     name: "Hat",
-    price: 13,
+    price: 12.25,
+    extra: {name: "           ", value: "One size fits most. Adjustable velcro closure. ReACHE Logo on front"}
   },
 }
 

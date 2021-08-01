@@ -16,6 +16,8 @@
 
       <snipcart-error-message :show-fields-errors="false"></snipcart-error-message>
 
+      <overridable name="billing" section="top"></overridable>
+
       <fieldset class="snipcart-form__set">
         <div class="snipcart-form__field">
           <snipcart-label class="snipcart__font--tiny" for="name">
@@ -36,13 +38,17 @@
           <snipcart-error-message name="email"></snipcart-error-message>
         </div>
         <div class="snipcart-form__field">
-          <snipcart-label class="snipcart__font--tiny" for="email"> Phone Number </snipcart-label>
+          <snipcart-label class="snipcart__font--tiny" for="phone"> Phone Number </snipcart-label>
 
           <snipcart-input name="phone"></snipcart-input>
-          <span class="snipcart-input--readonly snipcart__font--secondary snipcart__font--bold" v-else>{{ customer.phone }}</span>
-          <snipcart-error-message name="phone"></snipcart-error-message>
         </div>
       </fieldset>
+
+      <address-fields type="billing"></address-fields>
+
+      <hr class="snipcart-form__separator" v-if="shippingEnabled" />
+
+      <overridable name="billing" section="bottom"></overridable>
 
       <div class="snipcart-form__footer">
         <button type="submit" class="snipcart-cart-button snipcart__font--bold snipcart__font--secondary snipcart-cart-button--highlight snipcart__font--large" data-ol-has-click-handler=""><span class="snipcart-cart-button__icon"></span> Continue <span class="snipcart-cart-button__icon"></span></button>

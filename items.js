@@ -16,7 +16,7 @@ const allitems = {
   crewadult: {
     name: "Crew Neck - Adult",
     price: 10.05,
-    sizes: ["XS", "S", "M", "L", "XL"],
+    sizes: ["XS", "S", "M", "L", "XL", {size: "3XL", price: 2}, {size: "4XL", price: 2}],
     extra: { name: "Warning", value: "2XL is not available for this shirt selection" },
   },
   crewyouth: {

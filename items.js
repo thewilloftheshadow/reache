@@ -54,16 +54,19 @@ const allitems = {
     name: "Zippered Jacket - Adult",
     price: 22.75,
     sizes: master.adult,
+    description: "Limited stock available\n"
   },
   zipperedyouth: {
     name: "Zippered Jacket - Youth",
     price: 18.75,
     sizes: master.youth,
+    description: "Limited stock available\n"
   },
   hoodie: {
     name: "Pullover Hoodie - Adult",
     price: 22.0,
     sizes: master.adult,
+    description: "Limited stock available\n"
   },
   hat: {
     name: "Hat",
@@ -79,11 +82,11 @@ let generate = async function () {
       name: itemsrc.name,
       price: itemsrc.price,
       extra: itemsrc.extra,
-      description: Price.format("en-US", "USD", itemsrc.price),
       url,
       image: `${config.root}/images/${x}.png`,
       id: x,
     }
+    item.description += `${Price.format("en-US", "USD", itemsrc.price)}`
     if (itemsrc.sizes) item.sizefield = sizelist(itemsrc.sizes)
     module.exports.push(item)
   }

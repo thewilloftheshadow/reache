@@ -66,7 +66,7 @@ const allitems = {
   },
   hat: {
     name: "Hat",
-    price: 0,
+    price: 13,
   },
 }
 

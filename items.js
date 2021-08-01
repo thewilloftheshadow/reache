@@ -54,19 +54,19 @@ const allitems = {
     name: "Zippered Jacket - Adult",
     price: 22.75,
     sizes: master.adult,
-    extra: {name: "       ", value: "Limited stock available!"}
+    extra: {name: "           ", value: "Limited stock available!"}
   },
   zipperedyouth: {
     name: "Zippered Jacket - Youth",
     price: 18.75,
     sizes: master.youth,
-    extra: {name: "       ", value: "Limited stock available!"}
+    extra: {name: "           ", value: "Limited stock available!"}
   },
   hoodie: {
     name: "Pullover Hoodie - Adult",
     price: 22.0,
     sizes: master.adult,
-    extra: {name: "       ", value: "Limited stock available!"}
+    extra: {name: "           ", value: "Limited stock available!"}
   },
   hat: {
     name: "Hat",

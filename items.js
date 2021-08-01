@@ -17,7 +17,7 @@ const allitems = {
     name: "Crew Neck - Adult",
     price: 10.05,
     sizes: ["XS", "S", "M", "L", "XL", {size: "3XL", price: 2}, {size: "4XL", price: 2}],
-    extra: { name: "           ", value: "2XL not available in crew neck. See V-Neck option instead" },
+    extra: { name: "           ", value: "2XL not available in Crew Neck. See V-Neck option instead" },
   },
   crewyouth: {
     name: "Crew Neck - Youth",
@@ -37,7 +37,8 @@ const allitems = {
   vneck: {
     name: "V-Neck - Adult",
     price: 10.8,
-    sizes: ["S", "M", "L", "XL", {size: "2XL", price: 2}]
+    sizes: ["S", "M", "L", "XL", {size: "2XL", price: 2}],
+    extra: { name: "           ", value: "XS, 3XL, and 4XL not available in V-Neck. See Crew Neck option instead" },
   },
   longsleeveadult: {
     name: "Long Sleeves - Adult",

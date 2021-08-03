@@ -3,6 +3,48 @@
 
 <script async src="https://cdn.snipcart.com/themes/v3.0.30/default/snipcart.js"></script>
 <div hidden id="snipcart" data-api-key="ZWYxYThmNjAtOGYyNC00ODViLWI1MDctMmNiOTE5YjgzMjQwNjM3NDQzNTU1MTEwMDQxOTM3" data-config-add-product-behavior="">
+  <shipping-completed>
+    <div class="snipcart__box snipcart-shipping-completed">
+      <div class="snipcart-shipping-completed__header snipcart__box--header">
+          <div class="snipcart__box--title">
+              <div class="snipcart__box--badge snipcart__font--bold snipcart__font--secondary" v-if="checkout">
+                  <icon name="checkmark" class="snipcart__icon" />
+              </div>
+              <h1 class="snipcart-shipping-completed__title snipcart__font--subtitle">
+                  <icon name="box" class="snipcart__icon--left" v-if="!checkout"></icon>
+                  {{ $localize('shipping.title') }}
+              </h1>
+          </div>
+          <button-link
+              v-if="checkout" 
+              label="actions.edit"
+              @click="edit"
+          ></button-link>
+      </div>
+      
+      <div class="snipcart-checkout-step__cols snipcart__font--std">
+          <div class="snipcart-checkout-step__col">
+              <div class="snipcart-checkout-step__icon snipcart-shipping-completed__step-icon">
+                  <icon name="location" />
+              </div>
+              <div class="snipcart__address__display">
+                  <h3 class="snipcart-checkout-step__title snipcart-shipping-completed__step-title snipcart__font--secondary snipcart__font--bold">Shipping</h3>
+                  <span class="snipcart-shipping-completed__information snipcart__font--std">All shirts will be shipped directly to ReACHE and distributed by the Board.</span>
+              </div>
+          </div>
+  
+          <div class="snipcart-checkout-step__col">
+              <div class="snipcart-checkout-step__icon snipcart-shipping-completed__step-icon">
+                  <icon name="box"></icon>
+              </div>
+              <div>
+                  <h3 class="snipcart-checkout-step__title snipcart-shipping-completed__step-title snipcart__font--secondary snipcart__font--bold">{{ $localize('shipping.method') }}</h3>
+                  <span class="snipcart-shipping-completed__information">{{ shippingDetails.method }}</span>
+              </div>
+          </div>
+      </div>
+  </div>
+  </shipping-completed>
   <billing>
     <div class="snipcart__box">
       <div class="snipcart__box--header">
@@ -77,4 +119,24 @@
   $(function () {
     $('[data-toggle="tooltip"]').tooltip({ delay: { show: 5000, hide: 100 } })
   })
+</script>
+
+<script>
+  document.addEventListener('snipcart.ready', function() {
+      Snipcart.api.session.setLanguage('en', {
+          billing: {
+            address: "Address"
+          },
+          checkout: {
+            shipping_taxes_calculated_when_address_provided: "Taxes will be calculated on the next screen."
+          },
+          cart: {
+            shipping_taxes_calculated_at_checkout: "Taxes will be calculated at checkout."
+          },
+          payment: {
+            preparing_payment_session: "Preparing...",
+            processing_payment: "Processing..."
+          }
+      });
+  });
 </script>

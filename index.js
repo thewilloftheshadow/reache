@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express")
 const app = express()
 const ejs = require("ejs")
@@ -17,6 +18,6 @@ const run = async () => {
   app.get("/api/items", async (req, res) => {
     res.json(items)
   })
-  app.listen(43888, () => console.log("Online"))
+  app.listen(process.env.PORT, () => console.log("Online"))
 }
 run()
